@@ -16,11 +16,29 @@
 }
 .main-container {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    overflow-y: auto;
 }
+
+/* Left Sidebar */
+
+
 .left-sidebar {
+    grid-column: 1;
     padding: 2rem;
+    height: 100%;
     background-color: var(--black-color);
     max-width: 14rem;
+    display: grid;
+    grid-template-rows: 2;
+    /*check why with position fixed the sidebar becomes narrower*/
+}
+.upper-container {
+    grid-row: 1;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--mid-grey-color);
 }
 .sidebar-main-menu {
     list-style: none;
@@ -38,5 +56,41 @@
     max-height: 1.3rem;
 }
 .sidebar-menu-text {
+    grid-column: 2;
+    text-decoration: none;
+}
+h4 {
+    letter-spacing: 0.1em;
+}
+.bottom-container {
+    grid-row: 2;
+    overflow-y: auto;
+    /* overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none; */
+}
+.bottom-container::-webkit-scrollbar {
+    /* width: 0; */
+}
+.sidebar-playlists {
+    list-style: none;
+    padding: 0.5rem 0;
+}
+.sidebar-playlist-item {
+    padding: 0.25rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.sidebar-playlist-name {
+    text-decoration: none;
+}
+
+
+/*END left sidebar*/
+
+
+
+
+.main-music-block {
     grid-column: 2;
 }
