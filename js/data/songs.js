@@ -1,85 +1,89 @@
 export const songsList = [{
     "id": "1",
-    "url": "../../music/nice-for-what.mp3",
-    "time": "04:22",
-    "title": "Nice For What",
-    "artist": "Drake"
+    "url": "../../music/all-together.mp3",
+    "time": "01:39",
+    "title": "All Together",
+    "artist": "Famous Artist",
+    "cover": "../../images/1.jpg"
   },
   {
     "id": "2",
-    "url": "../../music/gods-plan.mp3",
-    "time": "03:19",
-    "title": "God's Plan",
-    "artist": "Drake"
+    "url": "../../music/ambient-call.mp3",
+    "time": "03:29",
+    "title": "Ambient Call of Motherland",
+    "artist": "Not very famous Artist",
+    "cover": "../../images/2.jpg"
   },
   {
     "id": "3",
-    "url": "../../music/professional-rapper.mp3",
-    "time": "05:52",
-    "title": "Professional Rapper ft. Snoop Dog",
-    "artist": "Lil Dicky"
+    "url": "../../music/sport-music.mp3",
+    "time": "02:07",
+    "title": "Sport Music",
+    "artist": "BearStockMusic",
+    "cover": "../../images/3.jpg"
   },
   {
     "id": "4",
-    "url": "../../music/yellow.mp3",
-    "time": "04:29",
-    "title": "Yellow",
-    "artist": "Coldplay"
+    "url": "../../music/perfect-day.mp3",
+    "time": "04:40",
+    "title": "Perfect Day",
+    "artist": "Happy Singer",
+    "cover": "../../images/4.jpg"
   },
   {
     "id": "5",
-    "url": "../../music/get-lucky.mp3",
-    "time": "06:09",
-    "title": "Get Lucky",
-    "artist": "Daft Punk"
+    "url": "../../music/full-track.mp3",
+    "time": "02:25",
+    "title": "Full Track",
+    "artist": "Unknown Artist",
+    "cover": "../../images/5.jpg"
   },
   {
     "id": "6",
-    "url": "../../music/shape-of-my-heart.mp3",
-    "time": "04:43",
-    "title": "Shape Of My Heart",
-    "artist": "Sting"
+    "url": "../../music/Powerful-Indie.mp3",
+    "time": "01:52",
+    "title": "Powerful Indie Rock full",
+    "artist": "Power Artist",
+    "cover": "../../images/6.jpg"
   },
   {
     "id": "7",
-    "url": "../../music/seven-days.mp3",
-    "time": "03:57",
-    "title": "7 days",
-    "artist": "craig David"
+    "url": "../../music/summer-love.mp3",
+    "time": "02:31",
+    "title": "Summer Love",
+    "artist": "Artist in Love",
+    "cover": "../../images/7.jpg"
   },
   {
     "id": "8",
-    "url": "../../music/dilemma.mp3",
-    "time": "04:42",
-    "title": "Nelly Dilemma ft. keylly Rowland",
-    "artist": "Nelly"
+    "url": "../../music/tech-and-sport.mp3",
+    "time": "02:08",
+    "title": "Tech and Sport Breakbeat",
+    "artist": "Techno Artist",
+    "cover": "../../images/8.jpg"
   },
   {
     "id": "9",
-    "url": "../../music/psycho.mp3",
-    "time": "03:57",
-    "title": "Post Malone Psycho Ft. Ty Dolla",
-    "artist": "Post malone"
+    "url": "../../music/The-Future-Bass.mp3",
+    "time": "02:07",
+    "title": "The Future Bass",
+    "artist": "Upcoming Singer",
+    "cover": "../../images/9.jpg"
   },
   {
     "id": "10",
-    "url": "../../music/congratulations.mp3",
-    "time": "03:40",
-    "title": "Congratulations ft. Quavo",
-    "artist": "Post Malone"
+    "url": "../../music/Wanna-Know-You.mp3",
+    "time": "02:28",
+    "title": "Wanna Know you",
+    "artist": "Mix Artist",
+    "cover": "../../images/10.jpg"
   },
   {
     "id": "11",
-    "url": "../../music/rockstar.mp3",
-    "time": "04:01",
-    "title": "Rockstar",
-    "artist": "Post Malone"
-  },
-  {
-    "id": "12",
-    "url": "../../music/sad.mp3",
-    "time": "02:46",
-    "title": "Sad",
-    "artist": "XXXtentacion"
-  },
+    "url": "../../music/yuar.mp3",
+    "time": "02:48",
+    "title": "Happy Commercial Indie Folk",
+    "artist": "Yuar",
+    "cover": "../../images/11.jpg"
+  }
 ];

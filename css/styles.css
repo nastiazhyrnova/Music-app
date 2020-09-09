@@ -1,0 +1,42 @@
+:root {
+    --white-color: #B3B3B3;
+    --black-color: #040404;
+    --green-color: #1DB954;
+    --dark-grey-color: #1C1D23;
+    --mid-grey-color: #282828;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--white-color);
+    font-size: 0.9rem;
+}
+.main-container {
+    width: 100%;
+}
+.left-sidebar {
+    padding: 2rem;
+    background-color: var(--black-color);
+    max-width: 14rem;
+}
+.sidebar-main-menu {
+    list-style: none;
+    padding: 1rem 0;
+}
+.sidebar-main-menu-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+.sidebar-menu-icon {
+    grid-column: 1;
+    max-width: 1.3rem;
+    max-height: 1.3rem;
+}
+.sidebar-menu-text {
+    grid-column: 2;
+}
