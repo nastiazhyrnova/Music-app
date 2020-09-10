@@ -14,25 +14,39 @@
     color: var(--white-color);
     font-size: 0.9rem;
 }
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--black-color);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--dark-grey-color);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--mid-grey-color);
+  }
+
+
 .main-container {
     width: 100%;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 2fr;
     overflow-y: auto;
 }
 
 /* Left Sidebar */
 
-
 .left-sidebar {
-    grid-column: 1;
+    flex: 1;
     padding: 2rem;
-    height: 100%;
+    height: 100vh;
     background-color: var(--black-color);
     max-width: 14rem;
     display: grid;
     grid-template-rows: 2;
-    /*check why with position fixed the sidebar becomes narrower*/
 }
 .upper-container {
     grid-row: 1;
@@ -45,18 +59,18 @@
     padding: 1rem 0;
 }
 .sidebar-main-menu-item {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
     align-items: center;
     padding: 0.5rem 0;
 }
 .sidebar-menu-icon {
-    grid-column: 1;
+    flex: 1;
     max-width: 1.3rem;
     max-height: 1.3rem;
 }
 .sidebar-menu-text {
-    grid-column: 2;
+    padding: 0 1rem;
+    flex: 1;
     text-decoration: none;
 }
 h4 {
@@ -65,12 +79,8 @@ h4 {
 .bottom-container {
     grid-row: 2;
     overflow-y: auto;
-    /* overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none; */
 }
-.bottom-container::-webkit-scrollbar {
-    /* width: 0; */
-}
+
 .sidebar-playlists {
     list-style: none;
     padding: 0.5rem 0;
@@ -85,12 +95,21 @@ h4 {
     text-decoration: none;
 }
 
-
 /*END left sidebar*/
 
 
-
+/*Main container with playlist*/
 
 .main-music-block {
-    grid-column: 2;
+    flex: 2;
 }
+
+
+
+/*END Main container with playlist*/
+
+
+
+/*Playbar*/
+
+/*END Playbar*/
