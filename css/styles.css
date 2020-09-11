@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     color: var(--white-color);
     font-size: 0.9rem;
@@ -102,8 +102,33 @@ h4 {
 
 .main-music-block {
     flex: 2;
-}
 
+}
+.music-block-header-container {
+    background: linear-gradient(135deg, #474747 0%,#2a2a2a 100%);
+    width: 100vh;
+    padding: 3rem;
+}
+.playlist-header {
+    display: flex;
+    color: #fff;
+}
+.playlist-cover {
+    flex: 1;
+    max-width: 200px;
+    color: inherit;
+}
+.playlist-title {
+    flex: 2;
+    color: inherit;
+    padding-left: 1rem;
+    align-items: bottom;
+}
+.playlist-name {
+    font-size: 3rem;
+    font-weight: 900;
+    color: inherit;
+}
 
 
 /*END Main container with playlist*/
@@ -111,5 +136,6 @@ h4 {
 
 
 /*Playbar*/
+
 
 /*END Playbar*/
