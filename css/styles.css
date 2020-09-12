@@ -124,16 +124,33 @@ h4 {
     padding-left: 1rem;
     align-items: flex-end;
     margin-top: auto;
-    /* position: absolute;
-    bottom: 0;
-    left: 35%; */
 }
 .playlist-name {
     font-size: 3rem;
     font-weight: 900;
     color: inherit;
 }
-
+.playlist-topbar-buttons {
+    width: 100%;
+    background-color: var(--dark-grey-color);
+    padding: 2.5rem;
+}
+.play-button {
+    display: block;
+    background-color: var(--green-color);
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+}
+.play-icon {
+    color: white;
+    font-size: 1.5rem;
+    position: relative;
+    top: 32%;
+    left: 4%;
+}
 
 /*END Main container with playlist*/
 
