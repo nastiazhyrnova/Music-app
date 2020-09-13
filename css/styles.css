@@ -124,6 +124,7 @@ h4 {
     padding-left: 1rem;
     align-items: flex-end;
     margin-top: auto;
+    color: red; 
 }
 .playlist-name {
     font-size: 3rem;
