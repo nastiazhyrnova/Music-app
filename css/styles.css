@@ -124,19 +124,26 @@ h4 {
     padding-left: 1rem;
     align-items: flex-end;
     margin-top: auto;
-    color: var(--green-color);
+    color: #fff;
 }
 .playlist-name {
     font-size: 3rem;
     font-weight: 900;
     color: inherit;
 }
+/*playlist container*/
+
+.music-block-playlist-container {
+    background-color: var(--dark-grey-color);
+}
+
+/*playlist topbar buttons */
+
 .playlist-topbar-buttons {
     width: 100%;
-    background-color: var(--dark-grey-color);
     padding: 2.5rem;
-    /*to delete*/
-    color: red;
+    display: flex;
+    align-items: center;
 }
 .play-button {
     display: block;
@@ -154,6 +161,37 @@ h4 {
     top: 32%;
     left: 4%;
 }
+.heart-button {
+    display: block;
+    text-align: center;
+    position: relative;
+    padding-left: 2rem;
+}
+.heart-icon {
+    color: var(--green-color);
+    position: relative;
+    font-size: 2rem;
+}
+.three-dots-button {
+    text-decoration: none;
+    padding-left: 2rem;
+}
+.three-dots-icon {
+    font-size: 1.2rem;
+}
+
+/*playlist main container*/
+
+.playlist-titles-container{
+
+}
+
+/*-playlist header*/
+
+.playlist-title-header {
+
+}
+
 
 /*END Main container with playlist*/
 
