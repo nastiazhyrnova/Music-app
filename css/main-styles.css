@@ -35,6 +35,10 @@
     color: var(--green-color);
 }
 
+.display-none {
+    display: none;
+}
+
 
 .main-container {
     width: 100%;
