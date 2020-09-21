@@ -8,7 +8,9 @@
   <title>Music Player</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/main-styles.css">
+  <link rel="stylesheet" href="css/playlist.css">
+
 </head>
 <body>
   <div class="main-container">
@@ -68,13 +70,30 @@
       <div class="music-block-playlist-container">
         <div class="playlist-topbar-buttons">
           <a href="" class="play-button"><i class="fa fa-play fa-2x play-icon"></i></a>
-          <a href="" class="heart-button"><i class="fas fa-heart heart-icon"></i></a>
+          <a href="" class="heart-button"><i class="far fa-heart heart-icon"></i></a>
           <a href="" class="three-dots-button"><i class="fas fa-ellipsis-h three-dots-icon"></i></i></a>
         </div>
-        <div class="playlist-titles-container">
-          <div class="playlist-title-header">
-
-          </div>
+        <div class="playlist-container">
+          <ul class="song-list">
+            <li class="song-table list-header">
+              <span class="song-number">#</span>
+              <span class="song-title">Title</span>
+              <span class="song-album">Album</span>
+              <span class="song-length"><i class="far fa-clock"></i></span>
+            </li>
+            <li class="song-table song-single">
+              <span class="song-number">1</span>
+              <span class="song-title-box">
+                <img src="images/1.jpg" alt="" class="song-cover">
+                <span class="song-name">Survivor</span>
+                <span class="song-author">Destiny Child</span>
+              </span>
+              <span class="song-album">Album</span>
+              <span class="song-length"><i class="far fa-clock"></i></span>
+            </li>
+            <li class="song-table song-single">Song 2</li>
+            <li class="song-table song-single">Song 3</li>
+          </ul>
         </div>
       </div>
     </div>
