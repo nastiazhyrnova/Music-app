@@ -132,12 +132,10 @@ li.song-table > span {
     margin: 0.5rem 0;
 }
 
-/* span.song-add-to-fav {
-    display: none;
+span.song-add-to-fav,
+span.song-dropdown-menu-button {
+    opacity: 0;
 }
-span.song-add-to-fav:hover {
-    display: inline-block;
-} */
 
 /*---PLAYLIST HEADER*/
 
@@ -161,6 +159,12 @@ span.song-title {
     display: flex;
     flex-direction: column;
 }
-
+span.song-name {
+    font-weight: 800;
+}
+span.song-author {
+    font-weight: 400;
+    opacity: 0.9;
+}
 
 /*END Main container with playlist*/
