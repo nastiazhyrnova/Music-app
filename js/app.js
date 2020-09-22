@@ -32,6 +32,6 @@ function addSongToPlaylist (songArrId) {
     playListEl.appendChild(newLiEl);
 };
 
-
+playListEl.scrollIntoView()
 // addSongToPlaylist(2);
 

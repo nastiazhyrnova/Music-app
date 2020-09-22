@@ -3,7 +3,8 @@
 
 .main-music-block {
     flex: 2;
-
+    height: 100vh;
+    overflow-y: scroll;
 }
 .music-block-header-container {
     background: linear-gradient(135deg, var(--mid-grey-color) 0%,var(--mid-grey-color) 100%);
@@ -88,7 +89,7 @@
 /*-PLAYLIST*/
 
 .playlist-container{
-    margin: 1rem 2rem;
+    padding: 1rem 2rem 5rem 2rem;
 }
 .song-table {
     display: flex;
