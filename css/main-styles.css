@@ -120,21 +120,53 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     padding: 1rem;
+    gap: 1rem;
 }
 
 .player-first-main-block,
 .player-second-main-block,
 .player-third-main-block {
     flex: 1;
-    /* text-align: center; */
     display: flex;
 }
-
 .player-first-main-block {
-    background-color: red;
+    display: flex;
+    align-items: center;
 }
+img.active-song-cover {
+    max-width: 4rem;
+}
+span.player-active-song-title-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    padding-left: 1rem;
+}
+span.player-active-song-name {
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+span.player-active-song-artist {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+a.player-heart-button {
+    flex: 1;
+}
+i.player-heart-icon {
+    font-size: 1rem;
+}
+.player-second-main-block {
+    background-color: green;
+}
+
+.player-third-main-block {
+    background-color: yellow;
+}
+
 
 
 
