@@ -130,6 +130,10 @@ h4 {
     flex: 1;
     display: flex;
 }
+
+
+/*left box*/
+
 .player-first-main-block {
     display: flex;
     align-items: center;
@@ -159,12 +163,23 @@ a.player-heart-button {
 i.player-heart-icon {
     font-size: 1rem;
 }
+
+/*middle box*/
+
 .player-second-main-block {
     background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
+
+
+/*right box*/
+
 .player-third-main-block {
-    background-color: yellow;
+    background-color: lightpink;
 }
 
 
