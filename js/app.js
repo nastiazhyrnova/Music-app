@@ -1,5 +1,6 @@
 import {songsList} from "./data/songs.js";
 
+
 //1.PLAYLIST: MUSIC INSERT
 const playListEl = document.querySelector(".song-list");
 
@@ -36,3 +37,18 @@ function addSongToPlaylist (songArrId) {
 // TO BE ADDED LATER
 // }
 
+
+//3. BURGER-MENU
+
+const burgerMenu = document.querySelector(".burger-menu");
+const burgerEl = document.querySelector(".hamburger");
+const leftSideBarEl = document.querySelector(".left-sidebar");
+
+
+const triggerBurger = () => {
+    burgerEl.classList.toggle("is-active");
+    // burgerMenu.classList.toggle("burger-menu-right");
+    leftSideBarEl.classList.toggle("display-flex");
+}
+
+burgerMenu.addEventListener('click', triggerBurger);
