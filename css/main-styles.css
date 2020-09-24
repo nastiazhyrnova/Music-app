@@ -125,10 +125,12 @@ h4 {
 }
 
 .player-first-main-block,
-.player-second-main-block,
 .player-third-main-block {
-    flex: 1;
+    flex: 1 1 0;
     display: flex;
+}
+.player-second-main-block {
+    flex: 3 2 0;
 }
 
 
@@ -159,6 +161,7 @@ span.player-active-song-artist {
 }
 a.player-heart-button {
     flex: 1;
+    text-align: center;
 }
 i.player-heart-icon {
     font-size: 1rem;
@@ -167,11 +170,72 @@ i.player-heart-icon {
 /*middle box*/
 
 .player-second-main-block {
-    background-color: green;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 100%;
+}
+.player-middle-upper-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+.player-middle-upper-box > a > i:hover {
+    color: #fff;
+}
+a.player-playpause-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s all ease;
+}
+i.play-icon-player {
+    align-self: center;
+    font-size: 1rem;
+    padding: 0.8rem 0.8rem 0.8rem 0.9rem;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    transition: 0.3s all ease;
+}
+i.play-icon-player:hover {
+    border: 1px solid #fff;
+    transform: scale(1.1);
+}
+.player-middle-bottom-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+span.player-timepast,
+span.player-timeleft {
+    flex: 1 1 auto;
+    text-align: center;
+}
+span.player-tracker-outer {
+    width: 20rem;
+    flex: 20 0 auto;
+    display: block;
+    background-color: #5f5f5f;
+    height: 3px;
+    border-radius: 1.5px;
+}
+span.player-tracker-inner {
+    display: block;
+    background-color: var(--white-color);
+    opacity: 1;
+    width: 20%;
+    height: inherit;
+    border-radius: inherit;
+    transition: 0.3s all ease;
+    position: relative;
+}
+span.player-tracker-inner:hover {
+    background-color: var(--green-color);
 }
 
 
@@ -179,7 +243,7 @@ i.player-heart-icon {
 /*right box*/
 
 .player-third-main-block {
-    background-color: lightpink;
+    background-color: red;
 }
 
 

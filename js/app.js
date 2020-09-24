@@ -1,16 +1,12 @@
 import {songsList} from "./data/songs.js";
 
-//PLAYLIST: MUSIC INSERT
+//1.PLAYLIST: MUSIC INSERT
 const playListEl = document.querySelector(".song-list");
 
-
+//add all songs from the file
 for (let i = 0; i < songsList.length; i++) {
     addSongToPlaylist(i);
 }
-
-
-
-
 
 //create a new li item
 function addSongToPlaylist (songArrId) {
@@ -32,6 +28,11 @@ function addSongToPlaylist (songArrId) {
     playListEl.appendChild(newLiEl);
 };
 
-playListEl.scrollIntoView()
-// addSongToPlaylist(2);
+
+
+//2.STICKY HEADER SCROLL
+
+// window.onscroll = function() {
+// TO BE ADDED LATER
+// }
 
