@@ -6,6 +6,7 @@
     height: 100vh;
     overflow-y: scroll;
     padding-bottom: 6rem;
+    background-color: var(--dark-grey-color);
 }
 .music-block-header-container {
     background: linear-gradient(135deg, var(--mid-grey-color) 0%,var(--mid-grey-color) 100%);
