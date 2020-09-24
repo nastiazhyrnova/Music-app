@@ -75,9 +75,9 @@
 /*END Burger Menu for the sidebar*/
 
 
-
-@media (max-width: 414px) {
-
+/*All mobile devices portrait mode & iphone 5 portrait + landscape mode*/
+@media (max-width: 568px) {
+    /*BURGER MENU AND LEFT SIDEBAR*/
     .music-block-header-container {
         padding-top: 4rem;
     }
@@ -103,11 +103,7 @@
     .bottom-container {
         width: 90%;
     }
-    /* .sidebar-main-menu {
-        display: flex;
-        gap: 2rem;
-        flex-direction: row;
-    } */
+
     .upper-container > img {
         max-width: 10rem;
         display: block;
@@ -118,5 +114,80 @@
         z-index: 100;
         position: absolute;
         left: 0;
+    }
+
+    /*PLAYLIST HEADER BOX*/
+    .playlist-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+    }
+    img.playlist-cover {
+        max-width: 100%;
+    }
+    img.active-song-cover {
+    display: none;
+    }
+
+
+    /*PLAYLIST*/
+    img.song-cover-img,
+    span.song-album,
+    span.list-header-album-title {
+        display: none;
+    }
+    .song-table * {
+        font-size: 1.1rem;
+    }
+}
+
+/*All mobile devices portrait mode BUT iphone 5 landscape mode*/
+@media (max-width: 567px){
+        /*PLAYER BAR*/
+        .player-row-sticky {
+            flex-direction: column;
+            height: 10rem;
+        }
+        .player-first-main-block {
+            width: 100%;
+            justify-content: space-between;
+        }
+        a.player-heart-button {
+            text-align: right;
+        }
+        .player-second-main-block {
+            justify-content: space-around;
+        }
+        .player-third-main-block {
+            display: none;
+        }
+        .player-timepast,
+        .player-timeleft {
+            display: none;
+        }
+        span.player-tracker-outer {
+            width: 90vw;
+        }
+}
+
+
+/*landscape iphone 5 specific*/
+@media (max-width: 568px) and (max-height: 320px) and (orientation: landscape) {
+
+    /*BURGER MENU AND LEFT SIDEBAR*/
+    .sidebar-main-menu {
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
+    }
+
+    /*PLAYLIST HEADER BOX*/
+    .playlist-header {
+        flex-direction: row;
+    }
+    img.playlist-cover {
+        width: 5rem;
     }
 }

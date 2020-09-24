@@ -21,7 +21,7 @@ html {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--dark-grey-color);
+    background: #262626;
   }
   ::-webkit-scrollbar-thumb {
     background: #404040;
@@ -267,7 +267,7 @@ span.player-tracker-inner:hover {
 }
 span.player-volume-tracker-outer {
     width: 100% auto;
-    min-width: 5rem;
+    min-width: 4rem;
     flex: 20 0 auto;
     display: block;
     background-color: #5f5f5f;
