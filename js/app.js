@@ -1,54 +1,22 @@
-import {songsList} from "./data/songs.js";
+import * as Responsive from "./modules/responsive.js"
+import * as Playlist from "./modules/playlist.js"
 
-
-//1.PLAYLIST: MUSIC INSERT
-const playListEl = document.querySelector(".song-list");
-
-//add all songs from the file
-for (let i = 0; i < songsList.length; i++) {
-    addSongToPlaylist(i);
-}
-
-//create a new li item
-function addSongToPlaylist (songArrId) {
-    const newLiEl = document.createElement("li");
-    newLiEl.classList.add("song-table");
-    newLiEl.classList.add("song-list");
-    const addHtml = `<span class="song-number">${songArrId+1}</span>
-                            <img src="${songsList[songArrId].cover}" alt="" class="song-cover-img">
-                            <span class="song-title">
-                                <span class="song-name">${songsList[songArrId].title}</span>
-                                <span class="song-author">${songsList[songArrId].artist}</span>
-                            </span>
-                            <span class="song-album">Best Album Ever</span>
-                            <span class="song-add-to-fav"><i class="far fa-heart"></i></span>
-                            <span class="song-length">${songsList[songArrId].time}</span>
-                            <span class="song-dropdown-menu-button"><i class="fas fa-ellipsis-h three-dots-icon"></i></span>`;
-    // console.log(newSongLine);
-    newLiEl.innerHTML = addHtml;
-    playListEl.appendChild(newLiEl);
-};
+const App = ( _ => {
 
 
 
-//2.STICKY HEADER SCROLL
 
-// window.onscroll = function() {
-// TO BE ADDED LATER
-// }
+    //main private function to run everything inside of the app
+    const runAllFuncs = _ => {
+        Responsive.burgerMenu();
+        Playlist.insertCurrentPlaylist();
+    }
 
+    //make main function public
+    return {
+        runAll: runAllFuncs
+    }
 
-//3. BURGER-MENU
+})();
 
-const burgerMenu = document.querySelector(".burger-menu");
-const burgerEl = document.querySelector(".hamburger");
-const leftSideBarEl = document.querySelector(".left-sidebar");
-
-
-const triggerBurger = () => {
-    burgerEl.classList.toggle("is-active");
-    // burgerMenu.classList.toggle("burger-menu-right");
-    leftSideBarEl.classList.toggle("display-flex");
-}
-
-burgerMenu.addEventListener('click', triggerBurger);
+App.runAll();
