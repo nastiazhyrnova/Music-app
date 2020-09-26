@@ -1,5 +1,5 @@
 import * as Responsive from "./modules/responsive.js"
-import * as Playlist from "./modules/playlist.js"
+import {PlaylistMainFunction} from "./modules/playlist.js"
 
 const App = ( _ => {
 
@@ -9,7 +9,7 @@ const App = ( _ => {
     //main private function to run everything inside of the app
     const runAllFuncs = _ => {
         Responsive.burgerMenu();
-        Playlist.insertCurrentPlaylist();
+        PlaylistMainFunction.runAll();
     }
 
     //make main function public

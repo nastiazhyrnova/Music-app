@@ -104,6 +104,9 @@
 }
 
 
+.song-active {
+    color: var(--green-color);
+}
 
 /*--SONG LINE*/
 
@@ -112,6 +115,11 @@ li.song-table {
     transition: 0.2s all ease;
 }
 li.song-table:hover {
+    background-color: var(--mid-grey-color);
+    border-radius: 5px;
+}
+
+.song-active-row {
     background-color: var(--mid-grey-color);
     border-radius: 5px;
 }
@@ -174,9 +182,6 @@ span.song-title {
 }
 span.song-name {
     font-weight: 800;
-}
-.song-name-active {
-    color: var(--green-color);
 }
 span.song-author {
     font-weight: 400;
