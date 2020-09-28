@@ -213,6 +213,9 @@ i.play-icon-player:hover {
     border: 1px solid #fff;
     transform: scale(1.1);
 }
+a.player-playpause-button > i.fa-play {
+    padding: 0.8rem 0.8rem 0.8rem 0.9rem;
+}
 .player-middle-bottom-box {
     width: 100%;
     display: flex;

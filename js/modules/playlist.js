@@ -15,27 +15,16 @@ export const PlaylistMainFunction =  ( _ => {
 
     //---AUXULIARY FUNCTIONS
 
-    //visual changes for an active song
+    //visual changes for an active song - highlighting etc
     const highlightActiveSongElement = (songIndex, styleForActive) => {
         if (songIndex === currentPlayingIndex) {
             return styleForActive;
         }
     }
 
-    //function to toggle play/pause icon when song is playing
-    const togglePlayPause = (songIndex, playButton, pauseButton) => {
-        if (songIndex === currentPlayingIndex) {
-            return currentSong.paused ? playButton : pauseButton;
-        }
-        else {
-            playButton;
-        }
-    }
-
-
-    //play/pause on click & change of icons
-    const playPause = (item) => {
-        item.addEventListener('click', (e) => {
+    // //function to toggle play/pause icon when song is playing
+    const playPause = (button) => {
+        button.addEventListener('click', (e) => {
             e.preventDefault();
             if (currentSong.paused) {
                 currentSong.play();
