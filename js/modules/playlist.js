@@ -120,7 +120,6 @@ export const PlaylistMainFunction =  ( _ => {
             changeURLofSong();
             togglePlayPause();
         }
-
     }
 
 
@@ -136,10 +135,6 @@ export const PlaylistMainFunction =  ( _ => {
             togglePlayPause();
             highlightActiveSongElement();
         });
-        nextIcon.addEventListener('click', e => {
-            e.preventDefault();
-
-        } )
     }
 
 
