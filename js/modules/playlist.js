@@ -8,6 +8,10 @@ export const PlaylistMainFunction =  ( _ => {
     let isPlaying = false;
 
     const playListEl = document.querySelector(".song-list");
+    const mainPlayButton = document.querySelector(".play-button");
+    const playIcons = document.querySelectorAll(".fa-play")
+    const playerPlayButton = document.querySelector(".player-playpause-button");
+
 
     //---AUXULIARY FUNCTIONS
 
@@ -28,6 +32,30 @@ export const PlaylistMainFunction =  ( _ => {
         }
     }
 
+
+    //play/pause on click & change of icons
+    const playPause = (item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentSong.paused) {
+                currentSong.play();
+                for (let icon of playIcons) {
+                    icon.classList.remove("fa-play");
+                    icon.classList.add("fa-pause");
+                }
+            }
+            else {
+                currentSong.pause();
+                for (let icon of playIcons) {
+                    icon.classList.remove("fa-pause");
+                    icon.classList.add("fa-play");
+                }
+            }
+        })
+    }
+
+
+
     //---MAIN FUNCTIONS
 
     //1. Insert music from the playlist
@@ -39,7 +67,7 @@ export const PlaylistMainFunction =  ( _ => {
             ( _ => {
                 const newLiEl = document.createElement("li");
                 newLiEl.classList.add("song-table");
-                newLiEl.classList.add("song-list");
+                newLiEl.classList.add("song-single");
                 const addHtml = `<span class="song-number ${highlightActiveSongElement(i, 'song-active')}">${i+1}</span>
                                         <img src="${songs[i].cover}" alt="" class="song-cover-img">
                                         <span class="song-title">
@@ -58,10 +86,16 @@ export const PlaylistMainFunction =  ( _ => {
     };
 
 
+    //2. ADD EVENT LISTENERS
+    const eventListeners = _ => {
+        playPause(mainPlayButton);
+        playPause(playerPlayButton);
+    }
 
     //---RUN ALL MAIN FUNCTIONS TOGETHER
     const runAll = _ => {
         importAllSongs();
+        eventListeners();
     }
 
     //---PUBLIC FUNCTION
