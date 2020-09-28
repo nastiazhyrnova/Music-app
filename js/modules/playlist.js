@@ -4,6 +4,8 @@ export const PlaylistMainFunction =  ( _ => {
     //---DECLARATIONS & caching the DOM
 
     let currentPlayingIndex = 1;
+    let clickedIndex = 1;
+    let clickedID = 0;
     let currentSong = new Audio(songs[currentPlayingIndex-1].url);
     let isPlaying = false;
 
@@ -17,10 +19,10 @@ export const PlaylistMainFunction =  ( _ => {
     //---AUXULIARY FUNCTIONS (OR REPEATED MORE THAN ONCE)
 
     //visual changes for an active song - highlighting etc
-    const highlightActiveSongElement = (clickedId) => {
+    const highlightActiveSongElement = _ => {
         const currentPlaylist = playListEl.children;
         for (let j = 1; j < currentPlaylist.length; j++) {
-            if (j === clickedId) {
+            if (j === clickedID) {
                 currentPlaylist[j].classList.add("song-active-row");
                 //get children elements of li item
                 const children = currentPlaylist[j].children;
@@ -55,15 +57,19 @@ export const PlaylistMainFunction =  ( _ => {
     }
 
     //change audio source of the current song
-    const changeURLofSong = songId => {
+    const changeURLofSong = _ => {
         for (let i = 0; i < songs.length; i++) {
-            if (songs[i].id == songId) {
+            if (songs[i].id == clickedID) {
                 currentSong.src = songs[i].url;
             }
         }
         // currentSong.src = songs[currentPlayingIndex-1].url;
     }
 
+    //function to change title and cover in the player bar
+    const changePlayerBar = _ => {
+
+    }
 
     //---MAIN FUNCTIONS
 
@@ -100,22 +106,22 @@ export const PlaylistMainFunction =  ( _ => {
         for (let j = 1; j < currentPlaylist.length; j++) {
             currentPlaylist[j].addEventListener('click', e => {
                 let liChildren = currentPlaylist[j].children;
-                const clickedNoOfSong = Number(liChildren[1].innerHTML);
-                const clickedIdOfSong = Number(liChildren[0].innerHTML);
-                highlightActiveSongElement(clickedNoOfSong);
-                mainPlay(clickedNoOfSong, clickedIdOfSong);
+                clickedIndex = Number(liChildren[1].innerHTML);
+                clickedID = Number(liChildren[0].innerHTML);
+                highlightActiveSongElement();
+                mainPlay();
             })
         }
     }
 
     //3. Main play function
-    const mainPlay = (clickedIndex, clickedId) => {
+    const mainPlay = _ => {
         if (currentPlayingIndex === clickedIndex) {
             togglePlayPause();
         }
         else {
             currentPlayingIndex = clickedIndex;
-            changeURLofSong(clickedId);
+            changeURLofSong();
             togglePlayPause();
         }
 
