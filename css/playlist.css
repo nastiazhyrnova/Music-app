@@ -126,26 +126,30 @@ li.song-table:hover {
     background-color: var(--mid-grey-color);
     border-radius: 5px;
 }
-li.song-table > :nth-child(1) {
+li > .song-id {
+    display: none;
+}
+
+li.song-table > :nth-child(2) {
     flex: 1 0 1rem;
 }
-li.song-table > :nth-child(2) {
+li.song-table > :nth-child(3) {
     flex: 1 0 1rem;
     margin-right: 0.7rem;
 }
-li.song-table > :nth-child(3) {
+li.song-table > :nth-child(4) {
     flex: 25 10 0;
 }
-li.song-table > :nth-child(4) {
-    flex: 20 10 0;
-}
 li.song-table > :nth-child(5) {
-    flex: 1 0 1rem;
+    flex: 20 10 0;
 }
 li.song-table > :nth-child(6) {
     flex: 1 0 1rem;
 }
 li.song-table > :nth-child(7) {
+    flex: 1 0 1rem;
+}
+li.song-table > :nth-child(8) {
     flex: 1 0 1rem;
 }
 
