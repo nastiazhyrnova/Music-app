@@ -5,14 +5,15 @@ export const PlaylistMainFunction =  ( _ => {
 
     let currentPlayingIndex = 1;
     let clickedIndex = 1;
-    let clickedID = 0;
+    let clickedID = 1;
     let currentSong = new Audio(songs[currentPlayingIndex-1].url);
     let isPlaying = false;
 
     const playListEl = document.querySelector(".song-list");
     const mainPlayButton = document.querySelector(".play-button");
     const playerPlayButton = document.querySelector(".player-playpause-button");
-    const playIcons = document.querySelectorAll(".fa-play")
+    const playIcons = document.querySelectorAll(".fa-play");
+    const nextIcon = document.querySelector(".next-icon");
 
 
 
@@ -22,16 +23,14 @@ export const PlaylistMainFunction =  ( _ => {
     const highlightActiveSongElement = _ => {
         const currentPlaylist = playListEl.children;
         for (let j = 1; j < currentPlaylist.length; j++) {
+            const children = currentPlaylist[j].children;
             if (j === clickedID) {
                 currentPlaylist[j].classList.add("song-active-row");
-                //get children elements of li item
-                const children = currentPlaylist[j].children;
                 children[1].classList.add("song-active");
                 children[3].firstElementChild.classList.add("song-active");
             }
             else {
                 currentPlaylist[j].classList.remove("song-active-row");
-                const children = currentPlaylist[j].children;
                 children[1].classList.remove("song-active");
                 children[3].firstElementChild.classList.remove("song-active");
             }
@@ -66,10 +65,7 @@ export const PlaylistMainFunction =  ( _ => {
         // currentSong.src = songs[currentPlayingIndex-1].url;
     }
 
-    //function to change title and cover in the player bar
-    const changePlayerBar = _ => {
 
-    }
 
     //---MAIN FUNCTIONS
 
@@ -127,18 +123,23 @@ export const PlaylistMainFunction =  ( _ => {
 
     }
 
+
     //???. Run all event listeners
     const listeners = _ => {
-        mainPlayButton.addEventListener('click', (e) => {
+        mainPlayButton.addEventListener('click', e => {
             e.preventDefault();
             togglePlayPause()
-            highlightActiveSongElement(currentPlayingIndex);
+            highlightActiveSongElement();
         });
-        playerPlayButton.addEventListener('click', (e) => {
+        playerPlayButton.addEventListener('click', e => {
             e.preventDefault();
             togglePlayPause();
-            highlightActiveSongElement(currentPlayingIndex);
+            highlightActiveSongElement();
         });
+        nextIcon.addEventListener('click', e => {
+            e.preventDefault();
+
+        } )
     }
 
 

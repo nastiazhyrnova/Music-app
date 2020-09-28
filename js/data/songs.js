@@ -35,7 +35,7 @@ export const songsList = [{
     "url": "music/full-track.mp3",
     "time": "02:25",
     "title": "Full Track",
-    "artist": "Unknown Artist",
+    "artist": "Screamy Artist",
     "cover": "images/5.jpg"
   },
   {
