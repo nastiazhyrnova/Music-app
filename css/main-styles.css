@@ -16,6 +16,14 @@
 html {
     font-size: 14px;
 }
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+button:focus {
+    outline: 0;
+}
 /*Scrollbar*/
 ::-webkit-scrollbar {
     width: 10px;
@@ -194,6 +202,7 @@ i.player-heart-icon {
 .player-middle-upper-box > a > i:hover {
     color: #fff;
 }
+
 a.player-playpause-button {
     display: flex;
     align-items: center;
