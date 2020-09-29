@@ -1,5 +1,5 @@
 export const songsList = [{
-    "id": "1",
+    "id": "25",
     "url": "music/all-together.mp3",
     "time": "01:39",
     "title": "All Together",
@@ -7,7 +7,7 @@ export const songsList = [{
     "cover": "images/1.jpg"
   },
   {
-    "id": "2",
+    "id": "26",
     "url": "music/ambient-call.mp3",
     "time": "03:29",
     "title": "Ambient Call of Motherland",
@@ -15,7 +15,7 @@ export const songsList = [{
     "cover": "images/2.jpg"
   },
   {
-    "id": "3",
+    "id": "35",
     "url": "music/sport-music.mp3",
     "time": "02:07",
     "title": "Sport Music",
@@ -23,7 +23,7 @@ export const songsList = [{
     "cover": "images/3.jpg"
   },
   {
-    "id": "4",
+    "id": "84",
     "url": "music/perfect-day.mp3",
     "time": "04:40",
     "title": "Perfect Day",
@@ -31,7 +31,7 @@ export const songsList = [{
     "cover": "images/4.jpg"
   },
   {
-    "id": "5",
+    "id": "59",
     "url": "music/full-track.mp3",
     "time": "02:25",
     "title": "Full Track",
@@ -39,7 +39,7 @@ export const songsList = [{
     "cover": "images/5.jpg"
   },
   {
-    "id": "6",
+    "id": "56",
     "url": "music/Powerful-Indie.mp3",
     "time": "01:52",
     "title": "Powerful Indie Rock full",
@@ -47,7 +47,7 @@ export const songsList = [{
     "cover": "images/6.jpg"
   },
   {
-    "id": "7",
+    "id": "74",
     "url": "music/summer-love.mp3",
     "time": "02:31",
     "title": "Summer Love",
@@ -55,7 +55,7 @@ export const songsList = [{
     "cover": "images/7.jpg"
   },
   {
-    "id": "8",
+    "id": "18",
     "url": "music/tech-and-sport.mp3",
     "time": "02:08",
     "title": "Tech and Sport Breakbeat",
@@ -63,7 +63,7 @@ export const songsList = [{
     "cover": "images/8.jpg"
   },
   {
-    "id": "9",
+    "id": "39",
     "url": "music/The-Future-Bass.mp3",
     "time": "02:07",
     "title": "The Future Bass",
@@ -71,7 +71,7 @@ export const songsList = [{
     "cover": "images/9.jpg"
   },
   {
-    "id": "10",
+    "id": "100",
     "url": "music/Wanna-Know-You.mp3",
     "time": "02:28",
     "title": "Wanna Know you",
@@ -79,7 +79,7 @@ export const songsList = [{
     "cover": "images/10.jpg"
   },
   {
-    "id": "11",
+    "id": "72",
     "url": "music/yuar.mp3",
     "time": "02:48",
     "title": "Happy Commercial Indie Folk",
