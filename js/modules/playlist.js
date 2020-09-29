@@ -9,19 +9,42 @@ export const PlaylistMainFunction =  ( _ => {
     const playIcons = document.querySelectorAll(".fa-play");
     const nextButton = document.querySelector(".player-next-button");
     const prevButton = document.querySelector(".player-previous-button");
+    const activeSongCover = document.querySelector(".active-song-cover");
+    const activeSongTitle = document.querySelector(".player-active-song-name");
+    const activeSongArtist = document.querySelector(".player-active-song-artist");
+    const playerTimePast = document.querySelector(".player-timepast");
+    const playerTimeLeft = document.querySelector(".player-timeleft");
 
 
     let currentPlayingIndex = 1;
-    let nextIndex = 1;
-    let songID = 25;
+    let clickedIndex = 1;
+    let songID;
     let currentSong = new Audio(songs[currentPlayingIndex-1].url);
     let playQueue = []; //start with index [0]
     let liItems = playListEl.children; // li items start with [1] as [0] is header & = display order
 
     //II. AUXULIARY FUNCTIONS (OR REPEATED)
 
-    //visual changes for an active song - highlighting etc
+    //get songID by index
+    const getSongID = (index) => {
+        for (let j = 1; j < liItems.length; j++) {
+            let liChildren = liItems[j].children;
+            if (index === Number(liChildren[1].innerHTML)) {
+                songID = Number(liChildren[0].innerHTML);
+            }
+        }
+    }
+    //get song Object by song ID
+    const getSongObject = (id) => {
+        for (let eachSong of songs) {
+            if (eachSong.id == id) {
+                return eachSong;
+            }
+        }
+    }
+    //visual changes for an active song - highlighting etc by song ID
     const highlightActiveSongElement = _ => {
+        //highlight line and titles in the playlist
         for (let j = 1; j < liItems.length; j++) {
             const children = liItems[j].children;
             if (liItems[j].firstElementChild.innerHTML == songID) {
@@ -35,8 +58,26 @@ export const PlaylistMainFunction =  ( _ => {
                 children[3].firstElementChild.classList.remove("song-active");
             }
         }
+        //inserto into the player bar
+        const activeSongObject = getSongObject(songID);
+        activeSongCover.src = activeSongObject.cover;
+        activeSongTitle.innerHTML = activeSongObject.title;
+        activeSongArtist.innerHTML = activeSongObject.artist;
+
+        //TO ADD TIME
+        // playerTimeLeft.innerHTML = currentSong.duration
+
+
     }
-    //function to toggle play/pause
+    //function to start playing current song
+    const playCurrentSong = _ => {
+        currentSong.play();
+        for (let icon of playIcons) {
+            icon.classList.remove("fa-play");
+            icon.classList.add("fa-pause");
+        }
+    }
+    //function to toggle play/pause (mainly for buttons)
     const togglePlayPause = _ => {
         if (currentSong.paused) {
             currentSong.play();
@@ -53,7 +94,7 @@ export const PlaylistMainFunction =  ( _ => {
             }
         }
     }
-    //change audio source of the current song
+    //change audio source of the current song to the assigned songID
     const changeURLofSong = _ => {
         for (let i = 0; i < songs.length; i++) {
             if (songs[i].id == songID) {
@@ -94,6 +135,7 @@ export const PlaylistMainFunction =  ( _ => {
                 playListEl.appendChild(newLiEl);
             })();
         }
+        songID = playlistName[0].id;
     };
     //--2). Set queue of playing one by one by default
     const setDefaultQueue = _ => {
@@ -113,7 +155,7 @@ export const PlaylistMainFunction =  ( _ => {
         for (let j = 1; j < liItems.length; j++) {
             liItems[j].addEventListener('click', e => {
                 let liChildren = liItems[j].children;
-                nextIndex = Number(liChildren[1].innerHTML);
+                clickedIndex = Number(liChildren[1].innerHTML);
                 songID = Number(liChildren[0].innerHTML);
                 playPauseIfClicked();
             })
@@ -121,11 +163,11 @@ export const PlaylistMainFunction =  ( _ => {
     }
     //---1.2) Play/pause if clicked, or change song and play
     const playPauseIfClicked = _ => {
-        if (currentPlayingIndex === nextIndex) {
+        if (currentPlayingIndex === clickedIndex) {
             togglePlayPause();
         }
         else {
-            currentPlayingIndex = nextIndex;
+            currentPlayingIndex = clickedIndex;
             changeURLofSong();
             togglePlayPause();
         }
@@ -135,25 +177,11 @@ export const PlaylistMainFunction =  ( _ => {
     //---2.1) Next or previous song: pass paramether 1 to play next song, or pass 0 to play previous
     const nextOrPrevSong = (boolean) => {
         boolean === 1 ? currentPlayingIndex++ : currentPlayingIndex--;
-        nextIndex = currentPlayingIndex;
-        getSongID();
+        getSongID(currentPlayingIndex);
         changeURLofSong();
-        currentSong.play();
-        for (let icon of playIcons) {
-            icon.classList.remove("fa-play");
-            icon.classList.add("fa-pause");
-        }
+        playCurrentSong();
     }
-    //---2.2) get songID of the next song (next index)
-    const getSongID = _ => {
-        for (let j = 1; j < liItems.length; j++) {
-            let liChildren = liItems[j].children;
-            if (nextIndex === Number(liChildren[1].innerHTML)) {
-                songID = Number(liChildren[0].innerHTML);
-            }
-        }
-    }
-    //---2.3) disable previous/next button if no song after or before is available
+    //---2.2) disable previous/next button if no song after or before is not available
     const disablePreviousOrNext = _ => {
         if (currentPlayingIndex == liItems.length) {
             nextButton.disabled = true;
@@ -166,6 +194,8 @@ export const PlaylistMainFunction =  ( _ => {
             prevButton.disabled = false;
         }
     }
+
+    //--3.) 
 
 
     //-3. EVENT LISTENERS ON THE BUTTONS AND PLAYLIST
@@ -202,7 +232,7 @@ export const PlaylistMainFunction =  ( _ => {
     //-4. RUN ALL MAIN FUNCTIONS TOGETHER
     const runAll = _ => {
         importAllSongs(songs);
-        setDefaultQueue();
+        // setDefaultQueue();
         highlightActiveSongElement();
         getClickedSongIndex();
         listeners();
