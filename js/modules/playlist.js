@@ -8,6 +8,7 @@ export const PlaylistMainFunction =  ( _ => {
     let clickedID = 1;
     let currentSong = new Audio(songs[currentPlayingIndex-1].url);
     let isPlaying = false;
+    let playQueue = [];
 
     const playListEl = document.querySelector(".song-list");
     const mainPlayButton = document.querySelector(".play-button");
@@ -18,6 +19,14 @@ export const PlaylistMainFunction =  ( _ => {
 
 
     //---AUXULIARY FUNCTIONS (OR REPEATED MORE THAN ONCE)
+
+    //set queue of playing one by one by default
+    const setDefaultQueue = _ => {
+        for (let song of songs) {
+            playQueue.push(song);
+        }
+        console.log(playQueue[1].url)
+    }
 
     //visual changes for an active song - highlighting etc
     const highlightActiveSongElement = _ => {
@@ -123,6 +132,7 @@ export const PlaylistMainFunction =  ( _ => {
     }
 
 
+
     //???. Run all event listeners
     const listeners = _ => {
         mainPlayButton.addEventListener('click', e => {
@@ -142,6 +152,7 @@ export const PlaylistMainFunction =  ( _ => {
     //---RUN ALL MAIN FUNCTIONS TOGETHER
     const runAll = _ => {
         importAllSongs();
+        setDefaultQueue();
         getClickedSongIndex();
         listeners();
     }
