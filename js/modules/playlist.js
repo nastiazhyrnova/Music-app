@@ -171,6 +171,7 @@ export const PlaylistMainFunction =  ( _ => {
             changeURLofSong();
             togglePlayPause();
         }
+        highlightActiveSongElement();
     }
 
     //--2.) NEXT/PREVIOUS BUTTONS
