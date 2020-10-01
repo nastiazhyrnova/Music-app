@@ -314,6 +314,10 @@ export const PlaylistMainFunction =  ( _ => {
             //set volume
             currentSong.volume = clickedVolume;
             setVolumeBarInner(clickedVolume);
+            if (currentSong.volume > 0) {
+                volumeIcon.classList.add("fa-volume-up");
+                volumeIcon.classList.remove("fa-volume-off");
+            }
         })
     }
     //---4.3) If muted, change icon
