@@ -278,6 +278,10 @@ span.player-tracker-inner:hover {
     justify-content: end;
     gap: 0.5rem;
 }
+button.volume-button {
+    text-align: left;
+    width: 10%;
+}
 span.player-volume-tracker-outer {
     width: 100% auto;
     min-width: 4rem;

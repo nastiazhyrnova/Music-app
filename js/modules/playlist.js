@@ -19,6 +19,7 @@ export const PlaylistMainFunction =  ( _ => {
     const playlistTotalDuration = document.querySelector(".playlist-total-duration");
     const volumeBarInner = document.querySelector(".player-volume-tracker-inner");
     const volumeBarOuter = document.querySelector(".player-volume-tracker-outer");
+    const volumeButton = document.querySelector(".volume-button");
     const volumeIcon = document.querySelector(".volume-icon");
 
 
@@ -289,8 +290,12 @@ export const PlaylistMainFunction =  ( _ => {
 
 
     //--4.) VOLUME BAR
-    //---4.1) Change volume depending of % value
-    const changeVolume = _ => {
+    //---4.1.) Set width of fill of the volume bar. Volume from 0 to 1
+    const setVolumeBarInner = (volume) => {
+            volumeBarInner.style.width = `${volume * 100}%`;
+    }
+    //---4.2) Change volume depending of % value
+    const changeVolumeOnClick = () => {
         volumeBarOuter.addEventListener('click', e => {
             //find out by coordinates where click was made
             const clickedX = e.clientX;
@@ -308,9 +313,23 @@ export const PlaylistMainFunction =  ( _ => {
             const clickedVolume = clickedPoint / totalWidth;
             //set volume
             currentSong.volume = clickedVolume;
-            //set volume bar width
-            volumeBarInner.style.width = `${clickedVolume * 100}%`;
+            setVolumeBarInner(clickedVolume);
         })
+    }
+    //---4.3) If muted, change icon
+    const toggleMuted = _ => {
+        if (currentSong.volume > 0) {
+            currentSong.volume = 0;
+            volumeIcon.classList.remove("fa-volume-up");
+            volumeIcon.classList.add("fa-volume-off");
+            setVolumeBarInner(0);
+        }
+        else {
+            currentSong.volume = 1;
+            volumeIcon.classList.add("fa-volume-up");
+            volumeIcon.classList.remove("fa-volume-off");
+            setVolumeBarInner(1);
+        }
     }
 
 
@@ -341,6 +360,9 @@ export const PlaylistMainFunction =  ( _ => {
             nextOrPrevSong(0);
             highlightActiveSongElement();
             disablePreviousOrNext();
+        });
+        volumeButton.addEventListener('click', e => {
+            toggleMuted();
         })
     }
 
@@ -354,7 +376,7 @@ export const PlaylistMainFunction =  ( _ => {
         getClickedSongIndex();
         disablePreviousOrNext();
         updateTrackbar();
-        changeVolume();
+        changeVolumeOnClick();
         listeners();
     }
 
