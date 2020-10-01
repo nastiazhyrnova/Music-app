@@ -309,3 +309,14 @@ span.player-volume-tracker-inner:hover {
 
 
 /*END Player*/
+
+
+/*HIDDEN BUTTONS FOR FUTURE*/
+
+button.heart-button,
+button.three-dots-button,
+button.player-heart-button,
+button.player-shuffle-button,
+button.player-repeat-button {
+    display: none;
+}

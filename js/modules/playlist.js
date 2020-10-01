@@ -291,7 +291,7 @@ export const PlaylistMainFunction =  ( _ => {
 
     //--4.) VOLUME BAR
     //---4.1.) Set width of fill of the volume bar. Volume from 0 to 1
-    const setVolumeBarInner = (volume) => {
+    const setVolumeBarInner = volume => {
             volumeBarInner.style.width = `${volume * 100}%`;
     }
     //---4.2) Change volume depending of % value

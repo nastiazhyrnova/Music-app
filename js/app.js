@@ -4,9 +4,6 @@ import {PlaylistMainFunction} from "./modules/playlist.js"
 
 const App = ( _ => {
 
-
-
-
     //main private function to run everything inside of the app
     const runAllFuncs = _ => {
         Responsive.burgerMenu();
@@ -21,3 +18,13 @@ const App = ( _ => {
 })();
 
 App.runAll();
+
+
+//MINIMUM VIABLE PRODUCT CREATED
+//FUNCTIONALITIES TO ADD IN THE FUTURE (SCALABLE)
+
+//1. Shuffle option (button is hidden)
+//2. Song loop (button is hidden)
+//3. Load another playlist from the list on the sidebar
+//4. Favorites  (buttons are hidden)
+//5. Current song trackbar click event and change time of the song
