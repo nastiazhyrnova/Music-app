@@ -233,7 +233,7 @@ a.player-playpause-button > i.fa-play {
     gap: 1rem;
 }
 span.player-timepast,
-span.player-timeleft {
+span.player-timetotal {
     flex: 1 1 auto;
     text-align: center;
 }
@@ -245,7 +245,6 @@ span.player-tracker-outer {
     height: 3px;
     border-radius: 1.5px;
     cursor: pointer;
-
 }
 span.player-tracker-inner {
     display: block;

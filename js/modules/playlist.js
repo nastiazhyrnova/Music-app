@@ -15,7 +15,7 @@ export const PlaylistMainFunction =  ( _ => {
     const trackBarEl = document.querySelector(".player-tracker-outer");
     const trackBarFillEl = document.querySelector(".player-tracker-inner");
     const playerTimePast = document.querySelector(".player-timepast");
-    const playerTimeLeft = document.querySelector(".player-timeleft");
+    const playerTimeTotal = document.querySelector(".player-timetotal");
 
 
     let currentPlayingIndex = 1;
@@ -28,7 +28,7 @@ export const PlaylistMainFunction =  ( _ => {
     const trackBarState = {
         currentTrackTime: 0,
         fullTrackTime: 0,
-        fullWidth: 0,
+        fullWidth: 0
     }
 
     //II. AUXULIARY FUNCTIONS (OR REPEATED)
@@ -71,6 +71,9 @@ export const PlaylistMainFunction =  ( _ => {
         activeSongCover.src = activeSongObject.cover;
         activeSongTitle.innerHTML = activeSongObject.title;
         activeSongArtist.innerHTML = activeSongObject.artist;
+        playerTimeTotal.innerHTML = activeSongObject.time;
+
+
 
     }
     //function to start playing current song
@@ -153,7 +156,9 @@ export const PlaylistMainFunction =  ( _ => {
 
     //-2. PLAYING FUNCTIONALITIES
 
+
     //--1.) CLICKING ON THE SONG
+
     //---1.1) Change current playing index to the index of the clicked song & get new song ID
     const getClickedSongIndex = _ => {
         for (let j = 1; j < liItems.length; j++) {
@@ -178,7 +183,9 @@ export const PlaylistMainFunction =  ( _ => {
         highlightActiveSongElement();
     }
 
+
     //--2.) NEXT/PREVIOUS BUTTONS
+
     //---2.1) Next or previous song: pass paramether 1 to play next song, or pass 0 to play previous
     const nextOrPrevSong = (boolean) => {
         boolean === 1 ? currentPlayingIndex++ : currentPlayingIndex--;
@@ -188,7 +195,7 @@ export const PlaylistMainFunction =  ( _ => {
     }
     //---2.2) disable previous/next button if no song after or before is not available
     const disablePreviousOrNext = _ => {
-        if (currentPlayingIndex == liItems.length) {
+        if (currentPlayingIndex === songs.length) {
             nextButton.disabled = true;
         }
         else if (currentPlayingIndex == 1) {
@@ -200,7 +207,9 @@ export const PlaylistMainFunction =  ( _ => {
         }
     }
 
+
     //--3.) TRACKBAR
+
     //---3.1) calculate current width % of the trackbar
     const getTrackBarPercent = (current, full) => {
         return (current / full * 100);
@@ -216,13 +225,35 @@ export const PlaylistMainFunction =  ( _ => {
     const changeTrackBarFill = _ => {
         trackBarFillEl.style.width = `${trackBarState.fillWidth}%`
     }
-    //---3.4) Update trackbar while playing
+    // ---3.4) Convert seconds if audio currenttime to time format
+    const secToTime = seconds => {
+        //round to full seconds
+        let roundedSec = Math.floor(seconds);
+        let minutes = 0;
+        //set minutes
+        if (roundedSec >= 60) {
+            minutes = roundedSec % 60;
+            roundedSec = roundedSec - (minutes * 60);
+        }
 
-    //---3.5) Update trackbar and time while playing
+        //add additional 0 is seconds are < 10
+        if (roundedSec < 10) {
+            return `${minutes}:0${roundedSec}`;
+        }
+        else {
+            return `${minutes}:${roundedSec}`;
+        }
+      }
+    //---3.5) Update trackbar while playing
+    const changeTimePast = _ => {
+        playerTimePast.innerHTML = secToTime(trackBarState.currentTrackTime);
+    }
+    //---3.6) Update trackbar and time while playing
     const updateTrackbar = _ => {
         currentSong.addEventListener('timeupdate', _ => {
             setTrackBarState(currentSong);
             changeTrackBarFill();
+            changeTimePast();
         })
     }
 
