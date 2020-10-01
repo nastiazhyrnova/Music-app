@@ -12,10 +12,15 @@ export const PlaylistMainFunction =  ( _ => {
     const activeSongCover = document.querySelector(".active-song-cover");
     const activeSongTitle = document.querySelector(".player-active-song-name");
     const activeSongArtist = document.querySelector(".player-active-song-artist");
-    const trackBarEl = document.querySelector(".player-tracker-outer");
+    // const trackBarEl = document.querySelector(".player-tracker-outer");
     const trackBarFillEl = document.querySelector(".player-tracker-inner");
     const playerTimePast = document.querySelector(".player-timepast");
     const playerTimeTotal = document.querySelector(".player-timetotal");
+    const playlistTotalDuration = document.querySelector(".playlist-total-duration");
+    const volumeBarInner = document.querySelector(".player-volume-tracker-inner");
+    const volumeBarOuter = document.querySelector(".player-volume-tracker-outer");
+    const volumeIcon = document.querySelector(".volume-icon");
+
 
 
     let currentPlayingIndex = 1;
@@ -24,7 +29,6 @@ export const PlaylistMainFunction =  ( _ => {
     let currentSong = new Audio(songs[currentPlayingIndex-1].url);
     let playQueue = []; //start with index [0]
     let liItems = playListEl.children; // li items start with [1] as [0] is header & = display order
-
     const trackBarState = {
         currentTrackTime: 0,
         fullTrackTime: 0,
@@ -34,7 +38,7 @@ export const PlaylistMainFunction =  ( _ => {
     //II. AUXULIARY FUNCTIONS (OR REPEATED)
 
     //get songID by index
-    const getSongID = (index) => {
+    const getSongID = index => {
         for (let j = 1; j < liItems.length; j++) {
             let liChildren = liItems[j].children;
             if (index === Number(liChildren[1].innerHTML)) {
@@ -43,7 +47,7 @@ export const PlaylistMainFunction =  ( _ => {
         }
     }
     //get song Object by song ID
-    const getSongObject = (id) => {
+    const getSongObject = id => {
         for (let eachSong of songs) {
             if (eachSong.id == id) {
                 return eachSong;
@@ -66,7 +70,7 @@ export const PlaylistMainFunction =  ( _ => {
                 children[3].firstElementChild.classList.remove("song-active");
             }
         }
-        //inserto into the player bar
+        //insert active song info into the player bar
         const activeSongObject = getSongObject(songID);
         activeSongCover.src = activeSongObject.cover;
         activeSongTitle.innerHTML = activeSongObject.title;
@@ -112,6 +116,7 @@ export const PlaylistMainFunction =  ( _ => {
 
 
 
+
     //III. MAIN FUNCTIONS
 
 
@@ -119,32 +124,58 @@ export const PlaylistMainFunction =  ( _ => {
     //-1. LOAD INFO INTO THE PAGE
 
     //--1). Insert music from the playlist
-    const importAllSongs = (playlistName) => {
+    const importAllSongs = playlist => {
         //add all songs from the file + highligth the active song
-        for (let i = 0; i < playlistName.length; i++) {
+        for (let i = 0; i < playlist.length; i++) {
             //create a new li item function
             ( _ => {
                 const newLiEl = document.createElement("li");
                 newLiEl.classList.add("song-table");
                 newLiEl.classList.add("song-single");
-                const addHtml = `<span class="song-id">${playlistName[i].id}</span>
+                const addHtml = `<span class="song-id">${playlist[i].id}</span>
                                     <span class="song-number">${i+1}</span>
-                                        <img src="${playlistName[i].cover}" alt="" class="song-cover-img">
+                                        <img src="${playlist[i].cover}" alt="" class="song-cover-img">
                                         <span class="song-title">
-                                            <span class="song-name">${playlistName[i].title}</span>
-                                            <span class="song-author">${playlistName[i].artist}</span>
+                                            <span class="song-name">${playlist[i].title}</span>
+                                            <span class="song-author">${playlist[i].artist}</span>
                                         </span>
                                         <span class="song-album">Best Album Ever</span>
                                         <span class="song-add-to-fav"><i class="far fa-heart"></i></span>
-                                        <span class="song-length">${playlistName[i].time}</span>
+                                        <span class="song-length">${playlist[i].time}</span>
                                         <span class="song-dropdown-menu-button"><i class="fas fa-ellipsis-h three-dots-icon"></i></span>`;
                 newLiEl.innerHTML = addHtml;
                 playListEl.appendChild(newLiEl);
             })();
+        songID = playlist[0].id;
         }
-        songID = playlistName[0].id;
     };
-    //--2). Set queue of playing one by one by default
+    //--2.)Count total playlist duration and insert into the element
+    //---2.1) Count total
+    const countTotalDuration = playlist => {
+        let totalHours = 0;
+        let totalMinutes = 0;
+        let totalSeconds = 0;
+
+        //extract minutes and seconds from string
+        for (let song of playlist) {
+            totalMinutes += Number(song.time.slice(0, 2));
+            totalSeconds += Number(song.time.slice(3));
+        }
+
+        //convert secs to minutes and mins to hours
+        totalMinutes += Math.floor(totalSeconds / 60);
+        totalHours += Math.floor(totalMinutes / 60);
+        totalMinutes = totalMinutes - (totalHours * 60);
+
+        return `${totalHours} hrs ${totalMinutes} min`
+    }
+    //---2.2) Insert total
+    const insertTotalDuration = playlist => {
+        playlistTotalDuration.innerHTML = countTotalDuration(playlist);
+    }
+
+
+    //--3.) Set queue of playing one by one by default
     const setDefaultQueue = _ => {
         for (let song of songs) {
             playQueue.push(song);
@@ -223,25 +254,24 @@ export const PlaylistMainFunction =  ( _ => {
     }
     //---3.3) Change trackbar fill
     const changeTrackBarFill = _ => {
-        trackBarFillEl.style.width = `${trackBarState.fillWidth}%`
+        trackBarFillEl.style.width = `${trackBarState.fillWidth}%`;
     }
-    // ---3.4) Convert seconds if audio currenttime to time format
-    const secToTime = seconds => {
+    // ---3.4) Convert seconds in audio currenttime to time format
+    const secToTime = secInput => {
         //round to full seconds
-        let roundedSec = Math.floor(seconds);
+        let seconds = Math.floor(secInput);
         let minutes = 0;
-        //set minutes
-        if (roundedSec >= 60) {
-            minutes = roundedSec % 60;
-            roundedSec = roundedSec - (minutes * 60);
+        //set minutes if exist
+        if (seconds >= 60) {
+            minutes = Math.floor(seconds / 60);
+            seconds = seconds % 60;
         }
-
-        //add additional 0 is seconds are < 10
-        if (roundedSec < 10) {
-            return `${minutes}:0${roundedSec}`;
+        //add additional 0 if seconds are < 10
+        if (seconds < 10) {
+            return `${minutes}:0${seconds}`;
         }
         else {
-            return `${minutes}:${roundedSec}`;
+            return `${minutes}:${seconds}`;
         }
       }
     //---3.5) Update trackbar while playing
@@ -254,6 +284,32 @@ export const PlaylistMainFunction =  ( _ => {
             setTrackBarState(currentSong);
             changeTrackBarFill();
             changeTimePast();
+        })
+    }
+
+
+    //--4.) VOLUME BAR
+    //---4.1) Change volume depending of % value
+    const changeVolume = _ => {
+        volumeBarOuter.addEventListener('click', e => {
+            //find out by coordinates where click was made
+            const clickedX = e.clientX;
+            let targetElement;
+            //check if we clicked on outer or on inner bar
+            if (e.target.classList.contains("player-volume-tracker-inner")) {
+                targetElement = e.target.parentElement.getBoundingClientRect();
+            }
+            else {
+                targetElement = e.target.getBoundingClientRect();
+            }
+            // calculations of relation
+            const totalWidth = targetElement.right - targetElement.left;
+            const clickedPoint = clickedX - targetElement.left;
+            const clickedVolume = clickedPoint / totalWidth;
+            //set volume
+            currentSong.volume = clickedVolume;
+            //set volume bar width
+            volumeBarInner.style.width = `${clickedVolume * 100}%`;
         })
     }
 
@@ -292,11 +348,13 @@ export const PlaylistMainFunction =  ( _ => {
     //-4. RUN ALL MAIN FUNCTIONS TOGETHER
     const runAll = _ => {
         importAllSongs(songs);
+        insertTotalDuration(songs);
         // setDefaultQueue();
         highlightActiveSongElement();
         getClickedSongIndex();
         disablePreviousOrNext();
         updateTrackbar();
+        changeVolume();
         listeners();
     }
 
