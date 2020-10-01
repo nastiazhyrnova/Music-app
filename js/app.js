@@ -1,3 +1,4 @@
+import {songsList as songs, songsList} from "./data/songs.js";
 import * as Responsive from "./modules/responsive.js"
 import {PlaylistMainFunction} from "./modules/playlist.js"
 

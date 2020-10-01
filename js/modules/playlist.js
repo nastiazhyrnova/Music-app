@@ -12,6 +12,8 @@ export const PlaylistMainFunction =  ( _ => {
     const activeSongCover = document.querySelector(".active-song-cover");
     const activeSongTitle = document.querySelector(".player-active-song-name");
     const activeSongArtist = document.querySelector(".player-active-song-artist");
+    const trackBarEl = document.querySelector(".player-tracker-outer");
+    const trackBarFillEl = document.querySelector(".player-tracker-inner");
     const playerTimePast = document.querySelector(".player-timepast");
     const playerTimeLeft = document.querySelector(".player-timeleft");
 
@@ -22,6 +24,12 @@ export const PlaylistMainFunction =  ( _ => {
     let currentSong = new Audio(songs[currentPlayingIndex-1].url);
     let playQueue = []; //start with index [0]
     let liItems = playListEl.children; // li items start with [1] as [0] is header & = display order
+
+    const trackBarState = {
+        currentTrackTime: 0,
+        fullTrackTime: 0,
+        fullWidth: 0,
+    }
 
     //II. AUXULIARY FUNCTIONS (OR REPEATED)
 
@@ -63,10 +71,6 @@ export const PlaylistMainFunction =  ( _ => {
         activeSongCover.src = activeSongObject.cover;
         activeSongTitle.innerHTML = activeSongObject.title;
         activeSongArtist.innerHTML = activeSongObject.artist;
-
-        //TO ADD TIME
-        // playerTimeLeft.innerHTML = currentSong.duration
-
 
     }
     //function to start playing current song
@@ -196,7 +200,31 @@ export const PlaylistMainFunction =  ( _ => {
         }
     }
 
-    //--3.) 
+    //--3.) TRACKBAR
+    //---3.1) calculate current width % of the trackbar
+    const getTrackBarPercent = (current, full) => {
+        return (current / full * 100);
+    }
+    //---3.2) set state of the trackbar
+    const setTrackBarState = obj => {
+        trackBarState.currentTrackTime = obj.currentTime;
+        trackBarState.fullTrackTime = obj.duration;
+        trackBarState.fillWidth = getTrackBarPercent(trackBarState.currentTrackTime, trackBarState.fullTrackTime);
+        changeTrackBarFill()
+    }
+    //---3.3) Change trackbar fill
+    const changeTrackBarFill = _ => {
+        trackBarFillEl.style.width = `${trackBarState.fillWidth}%`
+    }
+    //---3.4) Update trackbar while playing
+
+    //---3.5) Update trackbar and time while playing
+    const updateTrackbar = _ => {
+        currentSong.addEventListener('timeupdate', _ => {
+            setTrackBarState(currentSong);
+            changeTrackBarFill();
+        })
+    }
 
 
     //-3. EVENT LISTENERS ON THE BUTTONS AND PLAYLIST
@@ -236,8 +264,9 @@ export const PlaylistMainFunction =  ( _ => {
         // setDefaultQueue();
         highlightActiveSongElement();
         getClickedSongIndex();
-        listeners();
         disablePreviousOrNext();
+        updateTrackbar();
+        listeners();
     }
 
     //IV. PUBLIC FUNCTION
