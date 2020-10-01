@@ -164,7 +164,7 @@
             display: none;
         }
         .player-timepast,
-        .player-timeleft {
+        .player-timetotal {
             display: none;
         }
         span.player-tracker-outer {
