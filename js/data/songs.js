@@ -23,8 +23,8 @@ export const songsList = [{
     "cover": "images/3.jpg"
   },
   {
-    "id": "2",
-    "url": "music/sport-music.mp3",
+    "id": "21",
+    "url": "music/perfect-day.mp3",
     "time": "02:57",
     "title": "Perfect Day",
     "artist": "Happy Singerrr",
@@ -79,7 +79,7 @@ export const songsList = [{
     "cover": "images/10.jpg"
   },
   {
-    "id": "72",
+    "id": "69",
     "url": "music/yuar.mp3",
     "time": "02:48",
     "title": "Happy Commercial Indie Folk",
