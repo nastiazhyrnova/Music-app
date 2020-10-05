@@ -190,7 +190,8 @@
     .player-row-sticky {
         height: 9vh;
     }
-    .main-music-block {
+    .main-music-block,
+    .left-sidebar {
         height: 91vh;
     }
 
@@ -202,7 +203,8 @@
     .player-row-sticky {
         height: 20vh;
     }
-    .main-music-block {
+    .main-music-block,
+    .left-sidebar {
         height: 80vh;
     }
     .player-first-main-block,
@@ -234,7 +236,8 @@
     .player-row-sticky {
         height: 16vh;
     }
-    .main-music-block {
+    .main-music-block,
+    .left-sidebar {
         height: 84vh;
     }
 
@@ -247,7 +250,8 @@
     .player-row-sticky {
         height: 13vh;
     }
-    .main-music-block {
+    .main-music-block,
+    .left-sidebar {
         height: 87vh;
     }
 }
@@ -277,7 +281,8 @@
     .player-row-sticky {
         height: 20vh;
     }
-    .main-music-block {
+    .main-music-block,
+    .left-sidebar {
         height: 80vh;
     }
 }
@@ -291,7 +296,8 @@
     .player-row-sticky {
         height: 8vh;
     }
-    .main-music-block {
+    .main-music-block,
+    .left-sidebar {
         height: 92vh;
     }
 }
