@@ -25,6 +25,7 @@
     max-width: 200px;
     max-height: 200px;
     color: inherit;
+    margin: 0.2rem 0;
 }
 .playlist-title {
     flex: 2;
@@ -38,6 +39,9 @@
     font-size: 3rem;
     font-weight: 900;
     color: inherit;
+}
+.playlist-info {
+    margin: 0.5rem 0 0 0;
 }
 
 

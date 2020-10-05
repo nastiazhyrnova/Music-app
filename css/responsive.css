@@ -121,14 +121,16 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-
     }
     img.playlist-cover {
         max-width: 100%;
+        margin: 0.5rem 0;
     }
     img.active-song-cover {
-    display: none;
+        display: none;
+    }
+    .playlist-info {
+        margin: 0.5rem 0 0 0;
     }
 
 
@@ -179,8 +181,10 @@
     /*BURGER MENU AND LEFT SIDEBAR*/
     .sidebar-main-menu {
         display: flex;
-        gap: 2rem;
         flex-direction: row;
+    }
+    .sidebar-main-menu > li {
+        margin: 1rem 0;
     }
 
     /*PLAYLIST HEADER BOX*/
