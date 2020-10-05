@@ -202,7 +202,7 @@ i.player-heart-icon {
     flex-direction: row;
     align-items: center;
     gap: 1.5rem;
-    grid-gap: 1.5rem;
+    row-gap: 1.5rem;
 }
 .player-middle-upper-box > a > i:hover {
     color: #fff;
