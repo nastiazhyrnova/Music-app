@@ -63,7 +63,7 @@ button:focus {
     width: 100%;
     height: 100%;
     display: flex;
-    overflow: scroll
+    overflow: scroll;
 }
 
 /* Left Sidebar */
@@ -76,8 +76,6 @@ button:focus {
     max-width: 14rem;
     display: flex;
     flex-direction: column;
-    padding-bottom: 6rem;
-
 }
 
 .upper-container {
