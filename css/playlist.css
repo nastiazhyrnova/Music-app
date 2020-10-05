@@ -3,9 +3,9 @@
 
 .main-music-block {
     flex: 2;
-    height: 100vh;
+    height: 87vh;/*100vh - height of the sticky play bar */
     overflow-y: scroll;
-    padding-bottom: 6rem;
+    padding-bottom: 0.5rem;
     background-color: var(--dark-grey-color);
 }
 .music-block-header-container {
@@ -25,7 +25,6 @@
     max-width: 200px;
     max-height: 200px;
     color: inherit;
-    margin: 0.2rem 0;
 }
 .playlist-title {
     flex: 2;
@@ -39,9 +38,6 @@
     font-size: 3rem;
     font-weight: 900;
     color: inherit;
-}
-.playlist-info {
-    margin: 0.5rem 0 0 0;
 }
 
 
@@ -77,7 +73,7 @@ i.play-icon {
 i.play-icon:hover {
     transform: scale(1.1);
 }
-button.play-button > i.fa-play {
+a.play-button > i.fa-play {
     padding: 1.3rem 1.3rem 1.3rem 1.4rem;
 }
 .heart-button {

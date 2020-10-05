@@ -15,6 +15,8 @@
 }
 html {
     font-size: 14px;
+    height: 100vh;
+    width: 100vw;
 }
 button {
     background-color: transparent;
@@ -130,7 +132,7 @@ h4 {
 
 .player-row-sticky {
     width: 100%;
-    height: 6rem;
+    height: 13vh;
     background-color: var(--mid-grey-color);
     position: fixed;
     bottom: 0;
@@ -195,13 +197,14 @@ i.player-heart-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
 }
 .player-middle-upper-box {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-bottom: 0.2rem;
 }
 .player-middle-upper-box > button {
     margin: 0 0.7rem ;
