@@ -23,7 +23,7 @@ export const songsList = [{
     "cover": "images/3.jpg"
   },
   {
-    "id": "82",
+    "id": "2",
     "url": "music/sport-music.mp3",
     "time": "02:57",
     "title": "Perfect Day",
