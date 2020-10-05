@@ -3,7 +3,7 @@
 
 .main-music-block {
     flex: 2;
-    height: 87vh;/*100vh - height of the sticky play bar */
+    height: 100%;/* = 100vh - height of the sticky play bar */
     overflow-y: scroll;
     padding-bottom: 0.5rem;
     background-color: var(--dark-grey-color);

@@ -17,6 +17,7 @@ html {
     font-size: 14px;
     height: 100%;
     width: 100%;
+    background-color: var(--dark-grey-color);
 }
 button {
     background-color: transparent;
@@ -70,12 +71,13 @@ button:focus {
 .left-sidebar {
     flex: 1;
     padding: 2rem;
-    height: 100vh;
+    height: 100%;
     background-color: var(--black-color);
     max-width: 14rem;
     display: flex;
     flex-direction: column;
     padding-bottom: 6rem;
+
 }
 
 .upper-container {
