@@ -33,7 +33,7 @@ export const songsList = [{
   {
     "id": "59",
     "url": "music/full-track.mp3",
-    "time": "02:37",
+    "time": "02:07",
     "title": "Full Track",
     "artist": "Rock Artist",
     "cover": "images/5.jpg"
