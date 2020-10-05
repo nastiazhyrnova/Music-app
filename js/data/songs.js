@@ -25,7 +25,7 @@ export const songsList = [{
   {
     "id": "21",
     "url": "music/perfect-day.mp3",
-    "time": "02:57",
+    "time": "02:12",
     "title": "Perfect Day",
     "artist": "Happy Singer",
     "cover": "images/4.jpg"
@@ -33,7 +33,7 @@ export const songsList = [{
   {
     "id": "59",
     "url": "music/full-track.mp3",
-    "time": "01:47",
+    "time": "02:16",
     "title": "Full Track",
     "artist": "Screamy Artist",
     "cover": "images/5.jpg"
@@ -49,7 +49,7 @@ export const songsList = [{
   {
     "id": "74",
     "url": "music/summer-love.mp3",
-    "time": "02:31",
+    "time": "02:26",
     "title": "Summer Love",
     "artist": "Artist in Love",
     "cover": "images/7.jpg"
