@@ -180,7 +180,7 @@ span.player-active-song-artist {
     font-size: 0.8rem;
     font-weight: 600;
 }
-a.player-heart-button {
+button.player-heart-button {
     flex: 1;
     text-align: center;
 }
@@ -201,14 +201,17 @@ i.player-heart-icon {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1.5rem;
-    row-gap: 1.5rem;
+    /* gap: 1.5rem;
+    row-gap: 1.5rem; */
+}
+.player-middle-upper-box > button {
+    padding: 0 0.7rem 0 0.7rem;
 }
 .player-middle-upper-box > a > i:hover {
     color: #fff;
 }
 
-a.player-playpause-button {
+button.player-playpause-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,7 +230,7 @@ i.play-icon-player:hover {
     border: 1px solid #fff;
     transform: scale(1.1);
 }
-a.player-playpause-button > i.fa-play {
+button.player-playpause-button > i.fa-play {
     padding: 0.8rem 0.8rem 0.8rem 0.9rem;
 }
 .player-middle-bottom-box {
