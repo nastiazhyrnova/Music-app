@@ -31,8 +31,8 @@ export const songsList = [{
     "cover": "images/4.jpg"
   },
   {
-    "id": "59",
-    "url": "music/full-track.mp3",
+    "id": "55",
+    "url": "music/The-Future-Bass.mp3",
     "time": "02:07",
     "title": "Full Track",
     "artist": "Rock Artist",
