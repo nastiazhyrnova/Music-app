@@ -25,7 +25,7 @@ export const songsList = [{
   {
     "id": "84",
     "url": "music/perfect-day.mp3",
-    "time": "04:40",
+    "time": "02:57",
     "title": "Perfect Day",
     "artist": "Happy Singer",
     "cover": "images/4.jpg"
