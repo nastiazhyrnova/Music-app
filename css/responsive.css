@@ -195,7 +195,8 @@
     }
     .main-music-block,
     .left-sidebar {
-        height: 91vh;
+        height: 80vh;
+        height: calc(var(--vh, 1vh) * 100);
     }
 
 }
