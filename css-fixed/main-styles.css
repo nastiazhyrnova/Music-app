@@ -1,0 +1,452 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+:root {
+    --white-color: #B3B3B3;
+    --black-color: #040404;
+    --green-color: #1DB954;
+    --dark-grey-color: #1C1D23;
+    --mid-grey-color: #282828;}
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--white-color);
+    font-size: 0.9rem;
+}
+html {
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark-grey-color);
+}
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+button:focus {
+    outline: 0;
+}
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #262626;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #404040;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #545454;
+  }
+
+/*auxiliary styles*/
+
+.green-color {
+    color: var(--green-color);
+}
+
+.display-none {
+    display: none;
+}
+.display-flex {
+    display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+.burger-menu {
+    display: none;
+    position: absolute;
+}
+/*Main Container*/
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: scroll;
+}
+
+/* Left Sidebar */
+
+.left-sidebar {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 2rem;
+    height: 87vh;
+    background-color: var(--black-color);
+    max-width: 14rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.upper-container {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--mid-grey-color);
+}
+.sidebar-main-menu {
+    list-style: none;
+    padding: 1rem 0;
+}
+.sidebar-main-menu-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0.5rem 0;
+}
+.sidebar-menu-icon {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    max-width: 1.3rem;
+    max-height: 1.3rem;
+}
+.sidebar-menu-text {
+    padding: 0 1rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    text-decoration: none;
+}
+h4 {
+    letter-spacing: 0.1em;
+}
+.bottom-container {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    overflow-y: auto;
+}
+
+.sidebar-playlists {
+    list-style: none;
+    padding: 0.5rem 0;
+}
+.sidebar-playlist-item {
+    padding: 0.25rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+}
+.sidebar-playlist-name {
+    text-decoration: none;
+}
+
+/*END left sidebar*/
+
+
+/*Player*/
+
+.player-row-sticky {
+    width: 100%;
+    height: 13vh;
+    background-color: var(--mid-grey-color);
+    position: fixed;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem;
+}
+.player-row-sticky > div {
+    margin: 0 0.25rem;
+}
+.player-first-main-block,
+.player-third-main-block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.player-second-main-block {
+    -webkit-box-flex: 4;
+        -ms-flex: 4 2 0px;
+            flex: 4 2 0;
+}
+
+
+/*left box*/
+
+.player-first-main-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+img.active-song-cover {
+    max-width: 4rem;
+    margin: 0 0.5rem;
+}
+span.player-active-song-title-box {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 0.5rem;
+}
+span.player-active-song-title-box > span {
+    margin: 0 0.1rem;
+}
+span.player-active-song-name {
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+span.player-active-song-artist {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+button.player-heart-button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    text-align: center;
+    margin: 0 0.5rem;
+}
+i.player-heart-icon {
+    font-size: 1rem;
+}
+
+/*middle box*/
+
+.player-second-main-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 100%;
+}
+.player-middle-upper-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 0.2rem;
+}
+.player-middle-upper-box > button {
+    margin: 0 0.7rem ;
+}
+.player-middle-upper-box > a > i:hover {
+    color: #fff;
+}
+
+button.player-playpause-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-decoration: none;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+i.play-icon-player {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-size: 1rem;
+    padding: 0.8rem 0.85rem;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+i.play-icon-player:hover {
+    border: 1px solid #fff;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+button.player-playpause-button > i.fa-play {
+    padding: 0.8rem 0.8rem 0.8rem 0.9rem;
+}
+.player-middle-bottom-box {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.player-middle-bottom-box > span {
+    margin: 0 0.5rem;
+}
+span.player-timepast,
+span.player-timetotal {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    text-align: center;
+}
+span.player-tracker-outer {
+    width: 20rem;
+    -webkit-box-flex: 20;
+        -ms-flex: 20 0 auto;
+            flex: 20 0 auto;
+    display: block;
+    background-color: #5f5f5f;
+    height: 3px;
+    border-radius: 1.5px;
+    cursor: pointer;
+}
+span.player-tracker-inner {
+    display: block;
+    background-color: var(--white-color);
+    opacity: 1;
+    width: 0%;
+    height: inherit;
+    border-radius: inherit;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    position: relative;
+}
+span.player-tracker-inner:hover {
+    background-color: var(--green-color);
+}
+
+
+
+/*right box*/
+
+.player-third-main-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 1rem;
+}
+.player-volume-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    max-width: 8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+}
+button.volume-button {
+    text-align: left;
+    width: 10%;
+    margin: 0 0.25rem;
+}
+span.player-volume-tracker-outer {
+    width: 100% auto;
+    min-width: 4rem;
+    -webkit-box-flex: 20;
+        -ms-flex: 20 0 auto;
+            flex: 20 0 auto;
+    display: block;
+    background-color: #5f5f5f;
+    height: 3px;
+    border-radius: 1.5px;
+    cursor: pointer;
+    margin: 0 0.25rem;
+}
+span.player-volume-tracker-inner {
+    display: block;
+    background-color: var(--white-color);
+    opacity: 1;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    position: relative;
+}
+span.player-volume-tracker-inner:hover {
+    background-color: var(--green-color);
+}
+
+
+
+/*END Player*/
+
+
+/*HIDDEN BUTTONS FOR FUTURE*/
+
+button.heart-button,
+button.three-dots-button,
+button.player-heart-button,
+button.player-shuffle-button,
+button.player-repeat-button {
+    display: none;
+}
