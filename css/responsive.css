@@ -1,6 +1,8 @@
 /*Burger Menu for the sidebar*/
 .burger-menu {
     width: 100vw;
+}
+.dark-background {
     background-color: var(--mid-grey-color);
 }
 .hamburger {

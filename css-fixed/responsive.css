@@ -254,10 +254,12 @@
 @media (min-width: 569px) and (max-width: 896px) and (orientation: landscape) {
     .player-row-sticky {
         height: 20vh;
+        height: calc(var(--vh, 1vh) * 20);
     }
     .main-music-block,
     .left-sidebar {
         height: 75vh;
+        height: calc(var(--vh, 1vh) * 75);
     }
     .player-first-main-block,
     .player-third-main-block {

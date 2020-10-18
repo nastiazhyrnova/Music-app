@@ -15,24 +15,15 @@ export const Responsive = (_ => {
         burgerMenu.addEventListener('click', triggerBurger);
     };
 
-
-
     //fix the issue with the responsive viewport
     const setWindowHeight = _ => {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
-    //set background color to sticky header
-    const headerBG = _ => {
-        const burgerButton = document.querySelector(".hamburger--slider");
-    }
-
-
     const init = _ => {
         burgerMenu();
         setWindowHeight();
-        headerBG();
     }
 
     return {
