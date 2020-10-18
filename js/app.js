@@ -1,19 +1,12 @@
-import {songsList as songs, songsList} from "./data/songs.js";
-import * as Responsive from "./modules/responsive.js"
+import {Responsive} from "./modules/responsive.js"
 import {PlaylistMainFunction} from "./modules/playlist.js"
 
 const App = ( _ => {
 
-    //fix the issue with the responsive viewport
-    const setWindowHeight = _ => {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);    
-    }
 
     //main private function to run everything inside of the app
     const runAllFuncs = _ => {
-        setWindowHeight();
-        Responsive.burgerMenu();
+        Responsive.init();
         PlaylistMainFunction.runAll();
     }
 

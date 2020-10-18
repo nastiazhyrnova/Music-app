@@ -1,17 +1,41 @@
-export {burgerMenu};
+export const Responsive = (_ => {
+    //BURGER-MENU FOR MOBILE DEVICES
+    const burgerMenu = _ => {
+        const burgerMenu = document.querySelector(".burger-menu");
+        const burgerEl = document.querySelector(".hamburger");
+        const leftSideBarEl = document.querySelector(".left-sidebar");
+        const burgerButton = document.querySelector(".hamburger--slider");
 
-//BURGER-MENU FOR MOBILE DEVICES
-const burgerMenu = _ => {
-    const burgerMenu = document.querySelector(".burger-menu");
-    const burgerEl = document.querySelector(".hamburger");
-    const leftSideBarEl = document.querySelector(".left-sidebar");
 
-    const triggerBurger = () => {
-        burgerEl.classList.toggle("is-active");
-        leftSideBarEl.classList.toggle("display-flex");
+        const triggerBurger = () => {
+            burgerEl.classList.toggle("is-active");
+            burgerMenu.classList.toggle("dark-background");
+            leftSideBarEl.classList.toggle("display-flex");
+        }
+        burgerMenu.addEventListener('click', triggerBurger);
+    };
+
+
+
+    //fix the issue with the responsive viewport
+    const setWindowHeight = _ => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
-    burgerMenu.addEventListener('click', triggerBurger);
-};
+
+    //set background color to sticky header
+    const headerBG = _ => {
+        const burgerButton = document.querySelector(".hamburger--slider");
+    }
 
 
+    const init = _ => {
+        burgerMenu();
+        setWindowHeight();
+        headerBG();
+    }
 
+    return {
+        init
+    }
+})();
